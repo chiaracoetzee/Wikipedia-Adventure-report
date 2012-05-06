@@ -17,7 +17,7 @@ Derrick Coetzee \\
 \maketitle
 
 \begin{abstract}
-New contributors to Wikipedia face daunting technical and social challenges, contributing to ongoing decline in editor retention and systemic bias in article content. The Wikipedia Adventure is a web-based interactive tutorial for new users that leads them through learning essential basics in a safe game-like environment, and can extend to instruction on advanced skills. All interactions are tracked and linked to the user's real Wikipedia account, where their performance can be evaluated based on contribution logs. It is currently under development and early evaluation.
+New contributors to Wikipedia face daunting technical and social challenges, contributing to ongoing decline in editor retention and systemic bias in article content. The Wikipedia Adventure is a web-based interactive tutorial for new users that leads them through learning essential basics in a safe game-like environment, and can extend to instruction on advanced skills. All interactions are tracked and linked to the user's real Wikipedia account, where their performance can be evaluated based on contribution logs. We constructed a prototype that demonstrates the feasibility of all essential features, and gathered preliminary usage data and feedback from testers gathered from an expert user pool.
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -67,7 +67,7 @@ One way for new users to learn to use Wikipedia is to simply start using Wikiped
 
 These mechanisms can be highly effective for experienced users who know which of these resources to exploit and at what times, but for new users, these resources are either difficult to locate, difficult to use, or too many options are offered, leading to confusion. Moreover, the written help pages are not interactive, forcing users to experiment on the live site in order to "test out" what they have learned. Some users cause damage, while others, fearing they will break something, are reluctant to experiment, especially in complex articles using sophisticated markup.
 
-Personalized feedback is costly. All new users repeatedly encounter the same issues. Experienced users have resorted to using impersonal standardized messages (\emph{templates}) to provide feedback, as shown in Figure~\ref{fig:talktemplate}. 
+Personalized feedback is slow and costly. All new users repeatedly encounter the same issues. Experienced users have resorted to using impersonal standardized messages (\emph{templates}) to provide feedback, as shown in Figure~\ref{fig:talktemplate}. In an interactive tutorial, feedback can be given instantly, and no manual effort is required.
 
 Help and policy pages on Wikipedia, like articles, are structured as a web: each one links to many other help and policy pages. While valuable for exploratory learning for long-term users, new users who just want to learn enough to complete their short-term task are frustrated by this, not knowing which of the many linked documents will help them complete the task at hand correctly.
 
@@ -77,19 +77,26 @@ Another limitation of the standard interface is that the main encyclopedia is al
 
 The proposed tutorial would simulate the experience of the real Wikipedia website, but not affect the real site, and so is ``insulated from real consequences.'' \cite{Garris:2002} Instead of a complex web of pages, users will be given scripted instructions and a limited number of options at each point, with a mostly linear flow (links/options that are permitted are highlighted, while other links/options are nonfunctional).
 
-The goals of the initial lessons are to help the user learn enough to complete their desired short-term task successfully, while also teaching them enough to seek additional help as needed, either through additional lessons or through existing channels on Wikipedia. As emphasized by Olfman,\cite{Olfman:1994} it's important for initial training to include a combination of procedural training (technical how-to information) and conceptual training (helping new users to build a mental model of the site). In particular, basic concepts like how articles are communally edited and their content determined by consensus are essential for all users to understand.
+The goal of the introductory lessons is to help the user learn enough to complete their desired short-term task successfully, while also teaching them enough to seek additional help as needed, either through additional lessons or through existing channels on Wikipedia. As emphasized by Olfman,\cite{Olfman:1994} it's important for initial training to include a combination of procedural training (technical how-to information) and conceptual training (helping new users to build a mental model of the site). In particular, basic concepts like how articles are communally edited and their content determined by consensus are essential for all users to understand.
 
-After completing the initial lessons, which would introduce basic editing and help tools and share a linear narrative, the user would have the option of choosing from a pool of largely independent advanced lessons. These lessons serve two purposes: they allow users interested in exploratory learning and becoming long-term users to continue learning about subjects that interest them, and they allow users who have trouble in a particular area to learn more about that area. In both cases, they help developing editors to become expert, long-term users. By allowing direct web links to lessons, other users can suggest particular lessons, and help pages can link to related lessons. For particularly complex topics, prerequisites can be implemented where one lesson is recommended or required to be completed before another.
+After completing the initial lessons, which introduce basic editing and help tools and share a linear narrative, the user has the option of choosing from a pool of largely independent advanced lessons (exploring phase). These lessons serve two purposes: they allow users interested in exploratory learning and becoming long-term users to continue learning about subjects that interest them, and they allow users who have trouble in a particular area to learn more about that area. In both cases, they help developing editors to become expert, long-term users. By allowing direct web links to lessons, other users can suggest particular lessons, and help pages can link to related lessons. For particularly complex topics, prerequisites can be implemented where one lesson is recommended or required to be completed before another.
 
-The practice of having an initial, easy linear stage followed by a ``wide open'' exploratory space of more difficult stages is common in games, such as in the Final Fantasy series, where players are initially ``railroaded'' along a linear set of locations while learning the mechanics of the game, but are eventually given access to an airship that allows any location in the world to be easily visited in any order.
+The practice of having an initial, easy linear stage followed by a ``wide open'' exploratory space of more difficult stages is common in games, such as in the Final Fantasy series, where players are initially ``railroaded'' along a linear set of locations while learning the mechanics of the game, but are eventually given access to an airship that allows any location in the world to be easily visited in any order. Acquiring the airship can be motivating in itself because of the new freedom it offers; in the same way, the tutorial can create motivation to complete introductory lessons by informing the user that once they ``graduate,'' the pool of advanced lessons will be unlocked.
 
-At certain stages, the user will need to enter text, which needs to be evaluated for compliance to policies, such as "neutral point of view." Because it's not technically feasible to perform this evaluation on arbitrary text, the user would instead be presented a small number of text options, and the option they select is entered for them.
+At certain stages, the user will need to enter text, which needs to be evaluated for compliance to policies, such as "neutral point of view." Because it's not technically feasible to perform this evaluation on arbitrary text, the user would instead be presented a small number of text options, and the option they select is entered for them. Figure~\ref{fig:multiplechoice} shows a user selecting a username in compliance with username policy. If their selection is incorrect, they are immediately informed of the reason why and asked to choose again.
 
-Following success on the English-language Wikipedia, the system would undoubtedly be translated and modified to suit other language Wikipedias, and must be implemented with this in mind.
+\begin{figure}
+\centering
+\psfig{file=images/multiple_choice.png, width=\columnwidth,}
+\caption{A user is given several usernames and asked to choose one in compliance with username policy. If they select incorrectly, the option will be highlighted in red and an explanation will be given instantly.}
+\label{fig:talktemplate}
+\end{figure}
 
-Negative feedback is a controversial issue. On the real Wikipedia, users receive negative feedback for violating rules, eventually being blocked from editing entirely. The tutorial needs to illustrate that negative actions have negative consequences, without inadvertently encouraging negative actions. There are a couple ways to accomplish this: one is to show others receiving negative feedback in response to negative actions, and another is to give rapid feedback, immediately pointing out the negative action and ask the user to try again.
+Other Wikipedia users have expressed an interest in translating the tutorial into other languages. This requires both translation of instructions and altering the underlying website to resemble that language's Wikipedia project. Standard internationalization practices are essential to facilitate this.
 
-The initial lessons are of special note because although all new users have a need for certain basic skills, differences in motivation and background may justify altering the approach. Tech-savvy users should be able to skip easy lessons, or else they will be bored and lose interest.  Financially motivated users may need instruction on the conflict of interest policy, whereas altruistic users require none. Lessons can be made more personally relevant, again in the sense of Olfman\cite{Olfman:1991} by using example content in the area of interest of the new user.
+Negative feedback is controversial. On the real Wikipedia, users receive negative feedback for violating rules, eventually being blocked from editing entirely. The tutorial needs to illustrate that negative actions have negative consequences, without inadvertently encouraging negative actions. There are a couple ways to accomplish this: one is to show others receiving negative feedback in response to negative actions, and another is to give rapid feedback, immediately pointing out the negative action and ask the user to try again.
+
+The introductory lessons are of special note because although all new users have a need for certain basic skills, differences in motivation and background may justify altering the approach. Tech-savvy users should be able to skip easy lessons, or else they will be bored and lose interest.  Financially motivated users may need instruction on the conflict of interest policy, whereas altruistic users require none. Lessons can be made more personally relevant, again in the sense of Olfman\cite{Olfman:1991} by using example content in the area of interest of the new user.
 
 \section{Collaboration}
 
@@ -135,9 +142,29 @@ Users building lessons need to be able to identify elements of the page robustly
 
 The lesson builder can be extended into a more complete toolkit allowing third parties to develop interactive tutorials for any website, or even for desktop applications. Appropriate abstractions would need to be created to remove the current implementation's strong dependency on Javascript.
 
-\section{Future work}
+\section{Status and future work}
+
+Currently only a prototype with a subset of lessons is implemented. Although the prototype successfully
+verifies the feasibility of the implementation mechanisms required, more content
+must be generated to complete the introductory lessons and fully prepare new
+editors for contributing. Advanced lessons can be added as they become available.
+
+Ad hoc testing by experienced users has been performed, and usage data has been
+gathered, which gives basic information like minimum lesson completion time,
+but is not representative of the target user class. Proficiency assessment of
+users in the control group is proceeding in parallel with development. More lessons must
+be completed before proficiency assessment can meaningfully proceed for tutorial users.
+Analysis will follow.
+
+Currently lesson information is hardcoded in Javascript, which suffices for introductory
+lessons, but advanced lessons need to address hundreds of detailed policies and
+technical features. The lesson builder is essential to scale the project by distributing
+the effort of building  a pool of advanced lessons among volunteers. The lesson
+builder also provides a path to a tool that is useful in a more general setting.
 
 \section{Conclusions}
+
+
 
 \section{Acknowledgments}
 The Wikipedia Adventure is based originally on an idea and
