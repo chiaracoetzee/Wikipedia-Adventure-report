@@ -114,6 +114,7 @@ Because the scope of this project is too large for a single-semester course proj
 There is little doubt that, given a few fully-constructed lessons, many similar lessons could be constructed in essentially the same manner, so that spending time on content generation beyond that needed for a basic educational evaluation would be a poor investment. Prototyping the primary tutorial interface is essential. Easy-to-implement features with high payoff, like skipping of easy lessons or placing awards on real user pages, can also be implemented. More sophisticated features like customizing the experience for users with particular interests or motivations have a poorer cost/benefit ratio and can be postponed, as can the advanced lesson pool.
 
 \section{Implementation}
+
 In order to be broadly accessible to the diverse user base of Wikipedia, who already has web access, a web-based tutorial is intuitively advantageous. Running portably across major platforms and on hardware with poor performance is essential. Although some users only access Wikipedia from mobile devices, the editing interface on mobile devices is not usable at the present time, and so a mobile tutorial is unnecessary.
 
 Implementing the tutorial will be challenging, largely because it needs to simulate the already-complex interface of Wikipedia itself, and remain up-to-date as that interface is modified. Major changes to the editing interface, for example,  are planned in the next year. One approach to mitigating this is to base the tutorial on MediaWiki, the open source software used by Wikipedia, with other elements added on top using Javascript. The interface would appear identical to how the user would see it on the real website. Another approach is to use Adobe Flash with screenshots of the actual Wikipedia interface which are updated as needed, which would add versatility and simplify implementation of other elements such as animations at the expense of accurate rendering of the interface.
@@ -121,6 +122,7 @@ Implementing the tutorial will be challenging, largely because it needs to simul
 Although it is intuitively appealing to integrate the tutorial into the main Wikipedia site, making it easily accessible and allowing more interaction between it and the real site, this also risks compromising the impression of safety offered by a clear simulation.
 
 \section{User testing and assessment}
+
 As with any software tool, the most valuable feedback comes from real users. The system must be instrumented to track actions and progress by users, and follow-up surveys or interviews can yield qualitative feedback. By tying users to their Wikipedia user accounts, their performance in the lessons can be correlated with their contribution history as editors. Testing is expected to be an indefinitely ongoing process alongside real use.
 
 New users can be recruited from a variety of existing venues that already deal with new users and answer their questions, including online chat, the Articles for Creation process, welcome messages, and the help desk page. Links can be added to the tutorial where suitable, and volunteers who deal with new users can be trained to link to relevant tutorial lessons over time.
@@ -128,6 +130,12 @@ New users can be recruited from a variety of existing venues that already deal w
 \section{Lesson builder}
 
 A vital component going forward will be to enable users who are not technically savvy to contribute new lessons to the lesson pool. This will dramatically increase breadth and depth of content, motivate recruiting, and allow content creators to learn by teaching. However, this also risks creating the same excess of options presented by the original website, particularly if multiple lessons cover the same topic. One way to address this is to leverage ratings by players to choose their favorite lessons, and display highly-rated lessons in each category at the top.
+
+Users building lessons need to be able to identify elements of the page robustly without understanding the underlying markup. Ideally, the lesson builder would simply click on an element and a robust query identifying the element at that position would be derived automatically. Lessons follow a state machine, and lesson builders need to be able to identify lesson steps and transitions between steps based on user input. A visualization of this state machine may be effective. Lesson builders also need to be able to dynamically modify the page to create the appearance of the user's actions having an effect when in fact (for repeatability) this is not permitted. A history feature would be valuable to permit collaboration on lesson designs over time.
+
+The lesson builder can be extended into a more complete toolkit allowing third parties to develop interactive tutorials for any website, or even for desktop applications. Appropriate abstractions would need to be created to remove the current implementation's strong dependency on Javascript.
+
+\section{Future work}
 
 \section{Conclusions}
 
