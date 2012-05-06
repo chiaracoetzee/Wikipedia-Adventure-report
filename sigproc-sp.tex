@@ -4,10 +4,7 @@
 
 \title{The Wikipedia Adventure: an Interactive Tutorial for New Wikipedia Users\titlenote{This is a class report for CS 294-78 ("Special topics on Technologies for Education and Learning at Large Scale") and SCMATHE 220c ("Science and Mathematics Education: Designing  Educational Technologies") at University of California, Berkeley created in Spring 2012.  All rights are waived under the Creative Commons Zero Waiver (CC0). This is not a peer-reviewed work.}}
 
-\numberofauthors{1} %  in this sample file, there are a *total*
-% of EIGHT authors. SIX appear on the 'first-page' (for formatting
-% reasons) and the remaining two appear in the \additionalauthors section.
-%
+\numberofauthors{1}
 \author{
 \alignauthor
 Derrick Coetzee \\
@@ -18,23 +15,7 @@ Derrick Coetzee \\
 
 \maketitle
 \begin{abstract}
-This paper provides a sample of a \LaTeX\ document which conforms to
-the formatting guidelines for ACM SIG Proceedings.
-It complements the document \textit{Author's Guide to Preparing
-ACM SIG Proceedings Using \LaTeX$2_\epsilon$\ and Bib\TeX}. This
-source file has been written with the intention of being
-compiled under \LaTeX$2_\epsilon$\ and BibTeX.
-
-The developers have tried to include every imaginable sort
-of ``bells and whistles", such as a subtitle, footnotes on
-title, subtitle and authors, as well as in the text, and
-every optional component (e.g. Acknowledgments, Additional
-Authors, Appendices), not to mention examples of
-equations, theorems, tables and figures.
-
-To make best use of this sample document, run it through \LaTeX\
-and BibTeX, and compare this source code with the printed
-output produced by the dvi file.
+New contributors to Wikipedia face daunting technical and social challenges, contributing to ongoing decline in editor retention and systemic bias in article content. The Wikipedia Adventure is a web-based interactive tutorial for new users that leads them through learning essential basics in a safe game-like environment, and can extend to instruction on advanced skills. All interactions are tracked and linked to the user's real Wikipedia account, where their performance can be evaluated based on contribution logs. It is currently under development and early evaluation.
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -45,11 +26,11 @@ output produced by the dvi file.
 % \keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
 
 \section{Motivation}
-Since 2007, Wikipedia has experienced declining editor participation. Suh<ref name="suh 2009">Bongwon Suh, Gregorio Convertino, Ed H. Chi, and Peter Pirolli. 2009. The singularity is not near: slowing growth of Wikipedia. In Proceedings of the 5th International Symposium on Wikis and Open Collaboration (WikiSym '09). ACM, New York, NY, USA, , Article 8 , 10 pages.</ref> cites ``exclusion of newcomers and resistance to new edits'' as possible explanations. Personal experience shows new editors often either can't figure out how to edit Wikipedia, or have negative experiences due to their unfamiliarity with the site and its policies, so that they stop editing. The goal of this project is to increase editor retention and help new Wikipedia users to generate quality content by using an interactive, web-based tutorial to teach basic Wikipedia editing and policies.
+Since 2007, Wikipedia has experienced declining editor participation. Suh\cite{Suh:2009} cites ``exclusion of newcomers and resistance to new edits'' as possible explanations. Personal experience shows new editors often either can't figure out how to edit Wikipedia, or have negative experiences due to their unfamiliarity with the site and its policies, so that they stop editing. The goal of this project is to increase editor retention and help new Wikipedia users to generate quality content by using an interactive, web-based tutorial to teach basic Wikipedia editing and policies.
 
-From a user perspective, the motivation to contribute to Wikipedia in the first place can come from many sources. Some are financially motivated, seeking to spread awareness or good publicity for their business, band, or professional works, or to increase web traffic to their website via links. Some are egotistically motivated, seeking to become more widely-known themselves. Some participate as a course requirement. Some are motivated by a desire to correct errors in articles, or to spread awareness of a topic or point of view. Some are motivated by a desire to make an impact, some by a desire to attain status in the Wikipedia community, and some by a desire to spread knowledge to others. Motivations of Wikipedia editors have been explored by numerous researchers; a good source is Kuznetsov,<ref name="Kuznetsov 2006">Kuznetsov, Stacey. 2006. Motivations of contributors to Wikipedia. SIGCAS Comput. Soc. 36, 2, Article 1 (June 2006).</ref> which qualitatively explored a number of intrinsic and extrinsic motivating factors such as altruism, reciprocity, community, reputation, and autonomy.
+From a user perspective, the motivation to contribute to Wikipedia in the first place can come from many sources. Some are financially motivated, seeking to spread awareness or good publicity for their business, band, or professional works, or to increase web traffic to their website via links. Some are egotistically motivated, seeking to become more widely-known themselves. Some participate as a course requirement. Some are motivated by a desire to correct errors in articles, or to spread awareness of a topic or point of view. Some are motivated by a desire to make an impact, some by a desire to attain status in the Wikipedia community, and some by a desire to spread knowledge to others. Motivations of Wikipedia editors have been explored by numerous researchers; a good source is Kuznetsov,\cite{Kuznetsov:2006} which qualitatively explored a number of intrinsic and extrinsic motivating factors such as altruism, reciprocity, community, reputation, and autonomy.
 
-Likewise, the demographics of new Wikipedia users are diverse, coming from all age groups and all regions of the world. Thirteen-year olds in the US routinely contribute to articles on popular culture of interest to them, and retiree professors abroad who are speakers of English as a second language contribute as experts in their fields. Some carry PhDs in computer science, while others are barely capable of using a web browser. Glott<ref name="Glott 2010">Glott, Ruediger; Schmidt, Phillipp; Ghosh, Rishab. Wikipedia Survey - Overview of Results. Wikipedia Study. UNU-MERIT. Retrieved 20 July 2011.</ref> gives a survey of Wikipedia user demographics.
+Likewise, the demographics of new Wikipedia users are diverse, coming from all age groups and all regions of the world. Thirteen-year olds in the US routinely contribute to articles on popular culture of interest to them, and retiree professors abroad who are speakers of English as a second language contribute as experts in their fields. Some carry PhDs in computer science, while others are barely capable of using a web browser. Glott\cite{Glott:2010} gives a survey of Wikipedia user demographics.
 
 Teaching effective Wikipedia editing to such a diverse audience is a challenge: major differences in educational backgrounds and technical skill mean that tasks which are remedial for one audience (such as account creation) are challenging for others. This means the tutorial must be flexible enough to allow users to learn about basic tasks without boring more adept users. Some degree of adaptivity may be valuable; for example, a "placement test" could place users in the best starting lesson for them.
 
@@ -57,22 +38,22 @@ Another challenge is that many of the motivations listed above are short-term, i
 
 \section{Existing educational resources}
 
-One way for new users to learn to use Wikipedia is to simply start using Wikipedia. Upon encountering difficulties, they receive feedback from other users, consult help pages, ask for help, and experiment. Because learning is motivated by successful completion of the task immediately at hand, this facilitates in-context learning that is targeted and personally relevant in the sense of Olfman.<ref name="Olfman 1991">Olfman, L, and Bostrom, R P. 1991. End-user software training: an experimental comparison of methods to enhance motivation. Information Systems Journal, vol. 1, issue 4. Blackwell Publishing Ltd.</ref>
+One way for new users to learn to use Wikipedia is to simply start using Wikipedia. Upon encountering difficulties, they receive feedback from other users, consult help pages, ask for help, and experiment. Because learning is motivated by successful completion of the task immediately at hand, this facilitates in-context learning that is targeted and personally relevant in the sense of Olfman.\cite{Olfman:1991}
 
 These mechanisms can be effective for experienced users who know which of these resources to exploit and at what times, but for new users, these resources are either difficult to locate, difficult to use, or too many options are offered, leading to confusion. Moreover, the written help pages are not interactive, forcing users to experiment on the live site in order to "test out" what they have learned. Some users cause damage, while others, fearing they will break something, are reluctant to experiment, especially in complex articles using sophisticated markup.
 
 Help and policy pages on Wikipedia, like articles, are structured as a web: each one links to many other help and policy pages. While valuable for exploratory learning for long-term users, new users who just want to learn enough to complete their short-term task are frustrated by this, not knowing which of the many linked documents will help them complete the task at hand correctly.
-Another limitation of the standard interface is that the main encyclopedia is already well-developed. Notari,<ref name="Notari 2006">Notari, Michele. 2006. How to use a Wiki in education: Wiki based effective constructive learning. In Proceedings of the 2006 international symposium on Wikis (WikiSym '06). ACM, New York, NY, USA, 131-132.</ref> on motivating students to participate in class wikis, emphasizes the need for a “launch activity” which is “motivating, easy , and quickly achievable.” Most substantive article-writing activities no longer fall under this description, necessitating the invention of artificial tasks, which lack motivation.
+Another limitation of the standard interface is that the main encyclopedia is already well-developed. Notari,\cite{Notari:2006} on motivating students to participate in class wikis, emphasizes the need for a ``launch activity'' which is ``motivating, easy , and quickly achievable.'' Most substantive article-writing activities no longer fall under this description, necessitating the invention of artificial tasks, which lack motivation.
 
 \section{Design and learning goals}
 
-The proposed tutorial would simulate the experience of the real Wikipedia website, but not affect the real site, and so is “insulated from real consequences.” <ref name="Garris 2002">Garris, Rosemary; Ahlers, Robert; and Driskell, James E. Games. 2002. Motivation, and Learning: A Research and Practice Model. Simulation \& Gaming, December 2002, 33: 441-467.</ref> Instead of a complex web of pages, users will be given scripted instructions and a limited number of options at each point, with a mostly linear flow (links/options that are permitted are highlighted, while other links/options are nonfunctional).
+The proposed tutorial would simulate the experience of the real Wikipedia website, but not affect the real site, and so is ``insulated from real consequences.'' \cite{Garris:2002} Instead of a complex web of pages, users will be given scripted instructions and a limited number of options at each point, with a mostly linear flow (links/options that are permitted are highlighted, while other links/options are nonfunctional).
 
-The goals of the initial lessons are to help the user learn enough to complete their desired short-term task successfully, while also teaching them enough to seek additional help as needed, either through additional lessons or through existing channels on Wikipedia. As emphasized by Olfman,<ref name="Olfman 1994">Olfman, Lorne, and Mandviwalla, Munir. Conceptual versus Procedural Software Training for Graphical User Interfaces: A Longitudinal Field Experiment. MIS Quarterly , Vol. 18, No. 4 (Dec., 1994), pp. 405-426.</ref> it's important for initial training to include a combination of procedural training (technical how-to information) and conceptual training (helping new users to build a mental model of the site). In particular, basic concepts like how articles are communally edited and their content determined by consensus are essential for all users to understand.
+The goals of the initial lessons are to help the user learn enough to complete their desired short-term task successfully, while also teaching them enough to seek additional help as needed, either through additional lessons or through existing channels on Wikipedia. As emphasized by Olfman,\cite{Olfman:1994} it's important for initial training to include a combination of procedural training (technical how-to information) and conceptual training (helping new users to build a mental model of the site). In particular, basic concepts like how articles are communally edited and their content determined by consensus are essential for all users to understand.
 
 After completing the initial lessons, which would introduce basic editing and help tools and share a linear narrative, the user would have the option of choosing from a pool of largely independent advanced lessons. These lessons serve two purposes: they allow users interested in exploratory learning and becoming long-term users to continue learning about subjects that interest them, and they allow users who have trouble in a particular area to learn more about that area. In both cases, they help developing editors to become expert, long-term users. By allowing direct web links to lessons, other users can suggest particular lessons, and help pages can link to related lessons. For particularly complex topics, prerequisites can be implemented where one lesson is recommended or required to be completed before another.
 
-The practice of having an initial, easy linear stage followed by a “wide open” exploratory space of more difficult stages is common in games, such as in the Final Fantasy series, where players are initially “railroaded” along a linear set of locations while learning the mechanics of the game, but are eventually given access to an airship that allows any location in the world to be easily visited in any order.
+The practice of having an initial, easy linear stage followed by a ``wide open'' exploratory space of more difficult stages is common in games, such as in the Final Fantasy series, where players are initially ``railroaded'' along a linear set of locations while learning the mechanics of the game, but are eventually given access to an airship that allows any location in the world to be easily visited in any order.
 
 At certain stages, the user will need to enter text, which needs to be evaluated for compliance to policies, such as "neutral point of view." Because it's not technically feasible to perform this evaluation on arbitrary text, the user would instead be presented a small number of text options, and the option they select is entered for them.
 
@@ -80,11 +61,11 @@ Following success on the English-language Wikipedia, the system would undoubtedl
 
 Negative feedback is a controversial issue. On the real Wikipedia, users receive negative feedback for violating rules, eventually being blocked from editing entirely. The tutorial needs to illustrate that negative actions have negative consequences, without inadvertently encouraging negative actions. There are a couple ways to accomplish this: one is to show others receiving negative feedback in response to negative actions, and another is to give rapid feedback, immediately pointing out the negative action and ask the user to try again.
 
-The initial lessons are of special note because although all new users have a need for certain basic skills, differences in motivation and background may justify altering the approach. Tech-savvy users should be able to skip easy lessons, or else they will be bored and lose interest.  Financially motivated users may need instruction on the conflict of interest policy, whereas altruistic users require none. Lessons can be made more personally relevant, again in the sense of Olfman,<ref name="Olfman 1991"/> by using example content in the area of interest of the new user.
+The initial lessons are of special note because although all new users have a need for certain basic skills, differences in motivation and background may justify altering the approach. Tech-savvy users should be able to skip easy lessons, or else they will be bored and lose interest.  Financially motivated users may need instruction on the conflict of interest policy, whereas altruistic users require none. Lessons can be made more personally relevant, again in the sense of Olfman\cite{Olfman:1991} by using example content in the area of interest of the new user.
 
 \section{Collaboration}
 
-The tutorial described so far merely simulates communication between users, and is not effective at teaching real collaboration. Notari,<ref name="Notari 2006"/> describing use of wikis in constructivist classrooms, places a heavy emphasis on collaboration, from the beginning developing a “communication and comment culture ” with simple activities like commenting on one another's personal introductions.
+The tutorial described so far merely simulates communication between users, and is not effective at teaching real collaboration. Notari,\cite{Notari:2006} describing use of wikis in constructivist classrooms, places a heavy emphasis on collaboration, from the beginning developing a ``communication and comment culture '' with simple activities like commenting on one another's personal introductions.
 
 One way to address this is to exploit the existing collaborative platform by directing students to complete on-wiki tasks such as creating a real user page or giving feedback on an article talk page before they are permitted to continue to the next lesson, creating a hybrid tutorial experience. Another is to feature interaction among concurrent players.
 
@@ -96,11 +77,11 @@ Another interesting mechanic would be for players to complete certain tasks on t
 
 Another important goal is to encourage players to redo lessons that they may not have fully understood the first time. Drawing on games, one way to do this is with a score system that yields the most points for making good editing decisions. To make achieving the best score more challenging, available responses can be chosen randomly each time.
 
-Paras<ref name="Paras 2005">Paras, Brad and Bizzocchi, Jim. 2005. Game, motivation, and effective learning: An integrated model for educational game design. In the International DiGRA Conference, June 16th - 20th, 2005, Vancouver, British Columbia, Canada (http://www.gamesconference.org/digra2005/overview.php).</ref> emphasizes the importance of incorporating periods of reflection into gameplay, since players do not normally reflect while in a state of flow. In games like Starcraft, this is accomplished by rich visualizations and replays of what occurred during the game that can be reviewed between games. Likewise, if our tutorial possesses a score system, it should allow a player to revisit their responses and where they gained and lost points between lessons, allowing them to identify areas for improvement. This will also create what Garris<ref name="Garris 2002"/> refers to as a “judgment-behavior-feedback loops,” an essential advantage of games over passive instruction.
+Paras\cite{Paras:2005} emphasizes the importance of incorporating periods of reflection into gameplay, since players do not normally reflect while in a state of flow. In games like Starcraft, this is accomplished by rich visualizations and replays of what occurred during the game that can be reviewed between games. Likewise, if our tutorial possesses a score system, it should allow a player to revisit their responses and where they gained and lost points between lessons, allowing them to identify areas for improvement. This will also create what Garris\cite{Garris:2002} refers to as a ``judgment-behavior-feedback loops,'' an essential advantage of games over passive instruction.
 
 \section{Limitations for initial implementation}
 
-Because the scope of this project is too large for a single-semester course project, choices must be made regarding which part to complete first. A best practice in software scheduling is to target high risk parts of the design first, those that may or may not be successful and/or feasible.<ref>Boehm, B. W. 1988. A spiral model of software development and enhancement. In Computer, Vol. 21, No. 5. (06 May 1988), pp. 61-72. See risk-resolution/prototype stages.</ref> There are two main risks that need to be targeted: the technical risks associated with implementing the interface, score system, and review system; and the risk that the system as a whole may not be motivating, engaging, or teach the intended material well.
+Because the scope of this project is too large for a single-semester course project, choices must be made regarding which part to complete first. A best practice in software scheduling is to target high risk parts of the design first, those that may or may not be successful and/or feasible.\cite{Boehm:1988} There are two main risks that need to be targeted: the technical risks associated with implementing the interface, score system, and review system; and the risk that the system as a whole may not be motivating, engaging, or teach the intended material well.
 
 There is little doubt that, given a few fully-constructed lessons, many similar lessons could be constructed in essentially the same manner, so that spending time on content generation beyond that needed for a basic educational evaluation would be a poor investment. Prototyping the primary tutorial interface is essential. Easy-to-implement features with high payoff, like skipping of easy lessons or placing awards on real user pages, can also be implemented. More sophisticated features like customizing the experience for users with particular interests or motivations have a poorer cost/benefit ratio and can be postponed, as can the advanced lesson pool.
 
@@ -120,279 +101,12 @@ New users can be recruited from a variety of existing venues that already deal w
 
 A vital component going forward will be to enable users who are not technically savvy to contribute new lessons to the lesson pool. This will dramatically increase breadth and depth of content, motivate recruiting, and allow content creators to learn by teaching. However, this also risks creating the same excess of options presented by the original website, particularly if multiple lessons cover the same topic. One way to address this is to leverage ratings by players to choose their favorite lessons, and display highly-rated lessons in each category at the top.
 
-\section{References}
-<references/>
-
-
-\section{Introduction}
-The \textit{proceedings} are the records of a conference.
-ACM seeks to give these conference by-products a uniform,
-high-quality appearance.  To do this, ACM has some rigid
-requirements for the format of the proceedings documents: there
-is a specified format (balanced  double columns), a specified
-set of fonts (Arial or Helvetica and Times Roman) in
-certain specified sizes (for instance, 9 point for body copy),
-a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on
-the page, specified size of margins (1.9 cm [0.75"]) top, (2.54 cm [1"]) bottom
-and (1.9 cm [.75"]) left and right; specified column width
-(8.45 cm [3.33"]) and gutter size (.83 cm [.33"]).
-
-The good news is, with only a handful of manual
-settings\footnote{Two of these, the {\texttt{\char'134 numberofauthors}}
-and {\texttt{\char'134 alignauthor}} commands, you have
-already used; another, {\texttt{\char'134 balancecolumns}}, will
-be used in your very last run of \LaTeX\ to ensure
-balanced column heights on the last page.}, the \LaTeX\ document
-class file handles all of this for you.
-
-The remainder of this document is concerned with showing, in
-the context of an ``actual'' document, the \LaTeX\ commands
-specifically available for denoting the structure of a
-proceedings paper, rather than with giving rigorous descriptions
-or explanations of such commands.
-
-\section{The {\secit Body} of The Paper}
-Typically, the body of a paper is organized
-into a hierarchical structure, with numbered or unnumbered
-headings for sections, subsections, sub-subsections, and even
-smaller sections.  The command \texttt{{\char'134}section} that
-precedes this paragraph is part of such a
-hierarchy.\footnote{This is the second footnote.  It
-starts a series of three footnotes that add nothing
-informational, but just give an idea of how footnotes work
-and look. It is a wordy one, just so you see
-how a longish one plays out.} \LaTeX\ handles the numbering
-and placement of these headings for you, when you use
-the appropriate heading commands around the titles
-of the headings.  If you want a sub-subsection or
-smaller part to be unnumbered in your output, simply append an
-asterisk to the command name.  Examples of both
-numbered and unnumbered headings will appear throughout the
-balance of this sample document.
-
-Because the entire article is contained in
-the \textbf{document} environment, you can indicate the
-start of a new paragraph with a blank line in your
-input file; that is why this sentence forms a separate paragraph.
-
-\subsection{Type Changes and {\subsecit Special} Characters}
-We have already seen several typeface changes in this sample.  You
-can indicate italicized words or phrases in your text with
-the command \texttt{{\char'134}textit}; emboldening with the
-command \texttt{{\char'134}textbf}
-and typewriter-style (for instance, for computer code) with
-\texttt{{\char'134}texttt}.  But remember, you do not
-have to indicate typestyle changes when such changes are
-part of the \textit{structural} elements of your
-article; for instance, the heading of this subsection will
-be in a sans serif\footnote{A third footnote, here.
-Let's make this a rather short one to
-see how it looks.} typeface, but that is handled by the
-document class file. Take care with the use
-of\footnote{A fourth, and last, footnote.}
-the curly braces in typeface changes; they mark
-the beginning and end of
-the text that is to be in the different typeface.
-
-You can use whatever symbols, accented characters, or
-non-English characters you need anywhere in your document;
-you can find a complete list of what is
-available in the \textit{\LaTeX\
-User's Guide}\cite{Lamport:LaTeX}.
-
-\subsection{Math Equations}
-You may want to display math equations in three distinct styles:
-inline, numbered or non-numbered display.  Each of
-the three are discussed in the next sections.
-
-\subsubsection{Inline (In-text) Equations}
-A formula that appears in the running text is called an
-inline or in-text formula.  It is produced by the
-\textbf{math} environment, which can be
-invoked with the usual \texttt{{\char'134}begin. . .{\char'134}end}
-construction or with the short form \texttt{\$. . .\$}. You
-can use any of the symbols and structures,
-from $\alpha$ to $\omega$, available in
-\LaTeX\cite{Lamport:LaTeX}; this section will simply show a
-few examples of in-text equations in context. Notice how
-this equation: \begin{math}\lim_{n\rightarrow \infty}x=0\end{math},
-set here in in-line math style, looks slightly different when
-set in display style.  (See next section).
-
-\subsubsection{Display Equations}
-A numbered display equation -- one set off by vertical space
-from the text and centered horizontally -- is produced
-by the \textbf{equation} environment. An unnumbered display
-equation is produced by the \textbf{displaymath} environment.
-
-Again, in either environment, you can use any of the symbols
-and structures available in \LaTeX; this section will just
-give a couple of examples of display equations in context.
-First, consider the equation, shown as an inline equation above:
-\begin{equation}\lim_{n\rightarrow \infty}x=0\end{equation}
-Notice how it is formatted somewhat differently in
-the \textbf{displaymath}
-environment.  Now, we'll enter an unnumbered equation:
-\begin{displaymath}\sum_{i=0}^{\infty} x + 1\end{displaymath}
-and follow it with another numbered equation:
-\begin{equation}\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f\end{equation}
-just to demonstrate \LaTeX's able handling of numbering.
-
-\subsection{Citations}
-Citations to articles \cite{bowman:reasoning, clark:pct, braams:babel, herlihy:methodology},
-conference
-proceedings \cite{clark:pct} or books \cite{salas:calculus, Lamport:LaTeX} listed
-in the Bibliography section of your
-article will occur throughout the text of your article.
-You should use BibTeX to automatically produce this bibliography;
-you simply need to insert one of several citation commands with
-a key of the item cited in the proper location in
-the \texttt{.tex} file \cite{Lamport:LaTeX}.
-The key is a short reference you invent to uniquely
-identify each work; in this sample document, the key is
-the first author's surname and a
-word from the title.  This identifying key is included
-with each item in the \texttt{.bib} file for your article.
-
-The details of the construction of the \texttt{.bib} file
-are beyond the scope of this sample document, but more
-information can be found in the \textit{Author's Guide},
-and exhaustive details in the \textit{\LaTeX\ User's
-Guide}\cite{Lamport:LaTeX}.
-
-This article shows only the plainest form
-of the citation command, using \texttt{{\char'134}cite}.
-This is what is stipulated in the SIGS style specifications.
-No other citation format is endorsed.
-
-\subsection{Tables}
-Because tables cannot be split across pages, the best
-placement for them is typically the top of the page
-nearest their initial cite.  To
-ensure this proper ``floating'' placement of tables, use the
-environment \textbf{table} to enclose the table's contents and
-the table caption.  The contents of the table itself must go
-in the \textbf{tabular} environment, to
-be aligned properly in rows and columns, with the desired
-horizontal and vertical rules.  Again, detailed instructions
-on \textbf{tabular} material
-is found in the \textit{\LaTeX\ User's Guide}.
-
-Immediately following this sentence is the point at which
-Table 1 is included in the input file; compare the
-placement of the table here with the table in the printed
-dvi output of this document.
-
-\begin{table}
-\centering
-\caption{Frequency of Special Characters}
-\begin{tabular}{|c|c|l|} \hline
-Non-English or Math&Frequency&Comments\\ \hline
-\O & 1 in 1,000& For Swedish names\\ \hline
-$\pi$ & 1 in 5& Common in math\\ \hline
-\$ & 4 in 5 & Used in business\\ \hline
-$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-\hline\end{tabular}
-\end{table}
-
-To set a wider table, which takes up the whole width of
-the page's live area, use the environment
-\textbf{table*} to enclose the table's contents and
-the table caption.  As with a single-column table, this wide
-table will ``float" to a location deemed more desirable.
-Immediately following this sentence is the point at which
-Table 2 is included in the input file; again, it is
-instructive to compare the placement of the
-table here with the table in the printed dvi
-output of this document.
-
-
-\begin{table*}
-\centering
-\caption{Some Typical Commands}
-\begin{tabular}{|c|c|l|} \hline
-Command&A Number&Comments\\ \hline
-\texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
-\texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
-\texttt{{\char'134}table}& 300 & For tables\\ \hline
-\texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
-\end{table*}
-% end the environment with {table*}, NOTE not {table}!
-
-\subsection{Figures}
-Like tables, figures cannot be split across pages; the
-best placement for them
-is typically the top or the bottom of the page nearest
-their initial cite.  To ensure this proper ``floating'' placement
-of figures, use the environment
-\textbf{figure} to enclose the figure and its caption.
-
-This sample document contains examples of \textbf{.eps}
-and \textbf{.ps} files to be displayable with \LaTeX.  More
-details on each of these is found in the \textit{Author's Guide}.
-
-\begin{figure}
-\centering
-% \epsfig{file=fly.eps}
-\caption{A sample black and white graphic (.eps format).}
-\end{figure}
-
-\begin{figure}
-\centering
-% \epsfig{file=fly.eps, height=1in, width=1in}
-\caption{A sample black and white graphic (.eps format)
-that has been resized with the \texttt{epsfig} command.}
-\end{figure}
-
-
-As was the case with tables, you may want a figure
-that spans two columns.  To do this, and still to
-ensure proper ``floating'' placement of tables, use the environment
-\textbf{figure*} to enclose the figure and its caption.
-
-Note that either {\textbf{.ps}} or {\textbf{.eps}} formats are
-used; use
-the \texttt{{\char'134}epsfig} or \texttt{{\char'134}psfig}
-commands as appropriate for the different file types.
-
-\subsection{Theorem-like Constructs}
-Other common constructs that may occur in your article are
-the forms for logical constructs like theorems, axioms,
-corollaries and proofs.  There are
-two forms, one produced by the
-command \texttt{{\char'134}newtheorem} and the
-other by the command \texttt{{\char'134}newdef}; perhaps
-the clearest and easiest way to distinguish them is
-to compare the two in the output of this sample document:
-
-This uses the \textbf{theorem} environment, created by
-the\linebreak\texttt{{\char'134}newtheorem} command:
-\newtheorem{theorem}{Theorem}
-\begin{theorem}
-Let $f$ be continuous on $[a,b]$.  If $G$ is
-an antiderivative for $f$ on $[a,b]$, then
-\begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
-\end{theorem}
-
-The other uses the \textbf{definition} environment, created
-by the \texttt{{\char'134}newdef} command:
-\newdef{definition}{Definition}
-\begin{definition}
-If $z$ is irrational, then by $e^z$ we mean the
-unique number which has
-logarithm $z$: \begin{displaymath}{\log e^z = z}\end{displaymath}
-\end{definition}
-
 \begin{figure}
 \centering
 % \psfig{file=rosette.ps, height=1in, width=1in,}
 \caption{A sample black and white graphic (.ps format) that has
 been resized with the \texttt{psfig} command.}
 \end{figure}
-
-Two lists of constructs that use one of these
-forms is given in the
-\textit{Author's  Guidelines}.
 
 \begin{figure*}
 \centering
@@ -403,71 +117,17 @@ that needs to span two columns of text.}
 and don't forget to end the environment with
 {figure*}, not {figure}!
  
-There is one other similar construct environment, which is
-already set up
-for you; i.e. you must \textit{not} use
-a \texttt{{\char'134}newdef} command to
-create it: the \textbf{proof} environment.  Here
-is a example of its use:
-\begin{proof}
-Suppose on the contrary there exists a real number $L$ such that
-\begin{displaymath}
-\lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
-\end{displaymath}
-Then
-\begin{displaymath}
-l=\lim_{x\rightarrow c} f(x)
-= \lim_{x\rightarrow c}
-\left[ g{x} \cdot \frac{f(x)}{g(x)} \right ]
-= \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
-\frac{f(x)}{g(x)} = 0\cdot L = 0,
-\end{displaymath}
-which contradicts our assumption that $l\neq 0$.
-\end{proof}
-
-Complete rules about using these environments and using the
-two different creation commands are in the
-\textit{Author's Guide}; please consult it for more
-detailed instructions.  If you need to use another construct,
-not listed therein, which you want to have the same
-formatting as the Theorem
-or the Definition\cite{salas:calculus} shown above,
-use the \texttt{{\char'134}newtheorem} or the
-\texttt{{\char'134}newdef} command,
-respectively, to create it.
-
-\subsection*{A {\secit Caveat} for the \TeX\ Expert}
-Because you have just been given permission to
-use the \texttt{{\char'134}newdef} command to create a
-new form, you might think you can
-use \TeX's \texttt{{\char'134}def} to create a
-new command: \textit{Please refrain from doing this!}
-Remember that your \LaTeX\ source code is primarily intended
-to create camera-ready copy, but may be converted
-to other forms -- e.g. HTML. If you inadvertently omit
-some or all of the \texttt{{\char'134}def}s recompilation will
-be, to say the least, problematic.
-
 \section{Conclusions}
-This paragraph will end the body of this sample document.
-Remember that you might still have Acknowledgments or
-Appendices; brief samples of these
-follow.  There is still the Bibliography to deal with; and
-we will make a disclaimer about that here: with the exception
-of the reference to the \LaTeX\ book, the citations in
-this paper are to articles which have nothing to
-do with the present subject and are used as
-examples only.
 %\end{document}  % This is where a 'short' article might terminate
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
-This section is optional; it is a location for you
-to acknowledge grants, funding, editing assistance and
-what have you.  In the present case, for example, the
-authors would like to thank Gerald Murray of ACM for
-his help in codifying this \textit{Author's Guide}
-and the \textbf{.cls} and \textbf{.tex} files that it describes.
+The Wikipedia Adventure is based originally on an idea and
+initial design defined by User:Ocassi. Mock-ups
+were done by User:Sonia. Several
+other Wikipedia users and the staff of
+CS 294-78 and SCMATHE 220c gave feedback following
+review of the design and ad hoc testing.
 
 %
 % The following two commands are all you need in the
@@ -476,60 +136,4 @@ and the \textbf{.cls} and \textbf{.tex} files that it describes.
 \bibliographystyle{abbrv}
 \bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
 
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
-%
-% ACM needs 'a single self-contained file'!
-%
-%APPENDICES are optional
-%\balancecolumns
-\appendix
-%Appendix A
-\section{Headings in Appendices}
-The rules about hierarchical headings discussed above for
-the body of the article are different in the appendices.
-In the \textbf{appendix} environment, the command
-\textbf{section} is used to
-indicate the start of each Appendix, with alphabetic order
-designation (i.e. the first is A, the second B, etc.) and
-a title (if you include one).  So, if you need
-hierarchical structure
-\textit{within} an Appendix, start with \textbf{subsection} as the
-highest level. Here is an outline of the body of this
-document in Appendix-appropriate form:
-\subsection{Introduction}
-\subsection{The Body of the Paper}
-\subsubsection{Type Changes and  Special Characters}
-\subsubsection{Math Equations}
-\paragraph{Inline (In-text) Equations}
-\paragraph{Display Equations}
-\subsubsection{Citations}
-\subsubsection{Tables}
-\subsubsection{Figures}
-\subsubsection{Theorem-like Constructs}
-\subsubsection*{A Caveat for the \TeX\ Expert}
-\subsection{Conclusions}
-\subsection{Acknowledgments}
-\subsection{Additional Authors}
-This section is inserted by \LaTeX; you do not insert it.
-You just add the names and information in the
-\texttt{{\char'134}additionalauthors} command at the start
-of the document.
-\subsection{References}
-Generated by bibtex from your ~.bib file.  Run latex,
-then bibtex, then latex twice (to resolve references)
-to create the ~.bbl file.  Insert that ~.bbl file into
-the .tex source file and comment out
-the command \texttt{{\char'134}thebibliography}.
-% This next section command marks the start of
-% Appendix B, and does not continue the present hierarchy
-\section{More Help for the Hardy}
-The acm\_proc\_article-sp document class file itself is chock-full of succinct
-and helpful comments.  If you consider yourself a moderately
-experienced to expert user of \LaTeX, you may find reading
-it useful but please remember not to change it.
-\balancecolumns
-% That's all folks!
 \end{document}
