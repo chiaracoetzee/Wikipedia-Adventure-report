@@ -1,4 +1,5 @@
 \documentclass{acm_proc_article-sp}
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -14,6 +15,7 @@ Derrick Coetzee \\
 }
 
 \maketitle
+
 \begin{abstract}
 New contributors to Wikipedia face daunting technical and social challenges, contributing to ongoing decline in editor retention and systemic bias in article content. The Wikipedia Adventure is a web-based interactive tutorial for new users that leads them through learning essential basics in a safe game-like environment, and can extend to instruction on advanced skills. All interactions are tracked and linked to the user's real Wikipedia account, where their performance can be evaluated based on contribution logs. It is currently under development and early evaluation.
 \end{abstract}
@@ -26,24 +28,50 @@ New contributors to Wikipedia face daunting technical and social challenges, con
 % \keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
 
 \section{Motivation}
-Since 2007, Wikipedia has experienced declining editor participation. Suh\cite{Suh:2009} cites ``exclusion of newcomers and resistance to new edits'' as possible explanations. Personal experience shows new editors often either can't figure out how to edit Wikipedia, or have negative experiences due to their unfamiliarity with the site and its policies, so that they stop editing. The goal of this project is to increase editor retention and help new Wikipedia users to generate quality content by using an interactive, web-based tutorial to teach basic Wikipedia editing and policies.
 
-From a user perspective, the motivation to contribute to Wikipedia in the first place can come from many sources. Some are financially motivated, seeking to spread awareness or good publicity for their business, band, or professional works, or to increase web traffic to their website via links. Some are egotistically motivated, seeking to become more widely-known themselves. Some participate as a course requirement. Some are motivated by a desire to correct errors in articles, or to spread awareness of a topic or point of view. Some are motivated by a desire to make an impact, some by a desire to attain status in the Wikipedia community, and some by a desire to spread knowledge to others. Motivations of Wikipedia editors have been explored by numerous researchers; a good source is Kuznetsov,\cite{Kuznetsov:2006} which qualitatively explored a number of intrinsic and extrinsic motivating factors such as altruism, reciprocity, community, reputation, and autonomy.
+Since 2007, Wikipedia has experienced declining editor participation and retention, as shown in Figure~\ref{fig:retention}. Suh\cite{Suh:2009} cites ``exclusion of newcomers and resistance to new edits'' as possible explanations. Personal experience shows new editors often either can't figure out how to edit Wikipedia, or have negative experiences due to their unfamiliarity with the site and its policies, and stop editing. Learning policy thoroughly is an overwhelming prospect---just the key policies and guidelines fill a 270-page book---and there is little guidance regarding which policy is most important to learn first. The goal of this project is to help new Wikipedia users to generate quality content by using an interactive, web-based tutorial to teach basic Wikipedia editing and policies.
 
-Likewise, the demographics of new Wikipedia users are diverse, coming from all age groups and all regions of the world. Thirteen-year olds in the US routinely contribute to articles on popular culture of interest to them, and retiree professors abroad who are speakers of English as a second language contribute as experts in their fields. Some carry PhDs in computer science, while others are barely capable of using a web browser. Glott\cite{Glott:2010} gives a survey of Wikipedia user demographics.
+\begin{figure}
+\centering
+\psfig{file=images/Enwp_retention_vs_active_editors.png, width=\columnwidth,}
+\caption{Active editors and editor retention, 2004-2009. Active editors peaked in early 2007 and the one-year editor retention rate has fallen to 10\%. Source: Wikimedia Foundation Editor Trends Study.  
+\url{http://strategy.wikimedia.org/wiki/File:Enwp_retention_vs_active_editors.png}}
+\label{fig:retention}
+\end{figure}
 
-Teaching effective Wikipedia editing to such a diverse audience is a challenge: major differences in educational backgrounds and technical skill mean that tasks which are remedial for one audience (such as account creation) are challenging for others. This means the tutorial must be flexible enough to allow users to learn about basic tasks without boring more adept users. Some degree of adaptivity may be valuable; for example, a "placement test" could place users in the best starting lesson for them.
+\begin{figure*}
+\centering
+\psfig{file=images/wikipedia_adventure_big.png, width= 2 \columnwidth,}
+\caption{Screenshot from first level of The Wikipedia Adventure. The interface is identical in appearance to the real Wikipedia interface, except that instructions are overlaid instructing the user to click on the edit button. }
+\label{fig:screenshot}
+\end{figure*}
 
-Another challenge is that many of the motivations listed above are short-term, in the sense that they just want to write a single article (e.g. on their company) or fix a single problematic article and are not interested in investing time and effort in the lessons needed to become a good long-term contributor. Outside of a classroom environment, users cannot be compelled to complete the tutorial. An effective tutorial must recognize this by teaching the bare essentials needed for a contributor to begin achieving their immediate goal before they lose interest, but also encourage them to return when they encounter new barriers. One way to encourage return is to give a preview of what is taught by future lessons before they depart; another is to place links to lessons on Wikipedia, in the context where they are most useful.
+From a user perspective, the motivation to contribute to Wikipedia can come from many sources. Some are financially motivated, seeking to generate publicity for their business, band, or professional works, or to increase web traffic to their website via links. Some are egotistically motivated. Some are students participating as a course requirement. Some are motivated by a desire to ensure articles are accurate, or to spread awareness of a topic or point of view. Some are motivated by a desire to make an impact, some by a desire to attain status in the Wikipedia community, and some by a desire to spread knowledge to others. Motivations of Wikipedia editors have been explored by numerous researchers; a good source is Kuznetsov,\cite{Kuznetsov:2006} which qualitatively explored a number of intrinsic and extrinsic motivating factors such as altruism, reciprocity, community, reputation, and autonomy.
+
+Likewise, the demographics of new Wikipedia users are diverse, coming from all age groups and all regions of the world. Thirteen-year olds in the US routinely contribute to articles on popular culture, and retiree professors abroad who are speakers of English as a second language contribute as experts in their fields. Some carry PhDs in computer science, while others are barely capable of using a web browser. Glott\cite{Glott:2010} gives a survey of Wikipedia user demographics.
+
+Teaching effective Wikipedia editing to such a diverse audience is a challenge: major differences in educational backgrounds and technical skill mean that tasks which are remedial for one audience (such as account creation) are challenging for others. This means the tutorial must be flexible enough to allow users to learn about basic tasks without boring more adept users. The primary strategy used to address this is allowing skipping of early lessons based on answers to questions (for example, users who already have an account are not instructed how to create one).
+
+Another challenge is that many of the motivations listed above are short-term, in the sense that they just want to write a single article (e.g. on their company) or fix a single problematic article and are not interested in investing time and effort in the lessons needed to become a good long-term contributor. Unlike in a classroom environment, users cannot be compelled to complete the tutorial. An effective tutorial must recognize this by teaching the bare essentials needed for a contributor to begin achieving their immediate goal before they lose interest, but also encourage them to return when they encounter new barriers. One way to encourage return is to give a preview of what is taught by future lessons before they depart; another is to place links to lessons on Wikipedia, in the context where they are most useful.
 
 \section{Existing educational resources}
 
-One way for new users to learn to use Wikipedia is to simply start using Wikipedia. Upon encountering difficulties, they receive feedback from other users, consult help pages, ask for help, and experiment. Because learning is motivated by successful completion of the task immediately at hand, this facilitates in-context learning that is targeted and personally relevant in the sense of Olfman.\cite{Olfman:1991}
+One way for new users to learn to use Wikipedia is to simply start using Wikipedia; this is explicitly encouraged by Wikipedia's ``be bold'' guideline. Upon encountering difficulties, they receive feedback from other users (see Figure~\ref{fig:talktemplate}), consult help pages, ask for help, and experiment. If their understanding is incomplete, they receive further feedback when attempting the task again. Because learning is motivated by successful completion of the task immediately at hand, this facilitates in-context learning that is targeted and personally relevant in the sense of Olfman.\cite{Olfman:1991}
 
-These mechanisms can be effective for experienced users who know which of these resources to exploit and at what times, but for new users, these resources are either difficult to locate, difficult to use, or too many options are offered, leading to confusion. Moreover, the written help pages are not interactive, forcing users to experiment on the live site in order to "test out" what they have learned. Some users cause damage, while others, fearing they will break something, are reluctant to experiment, especially in complex articles using sophisticated markup.
+\begin{figure}
+\centering
+\psfig{file=images/talk_page_message.png, width=2.5 in,}
+\caption{A standardized talk page message reminding a user to enter edit summaries when editing. Feedback from other users provides targeted in-context learning, but is costly.}
+\label{fig:talktemplate}
+\end{figure}
+
+These mechanisms can be highly effective for experienced users who know which of these resources to exploit and at what times, but for new users, these resources are either difficult to locate, difficult to use, or too many options are offered, leading to confusion. Moreover, the written help pages are not interactive, forcing users to experiment on the live site in order to "test out" what they have learned. Some users cause damage, while others, fearing they will break something, are reluctant to experiment, especially in complex articles using sophisticated markup.
+
+Personalized feedback is costly. All new users repeatedly encounter the same issues. Experienced users have resorted to using impersonal standardized messages (\emph{templates}) to provide feedback, as shown in Figure~\ref{fig:talktemplate}. 
 
 Help and policy pages on Wikipedia, like articles, are structured as a web: each one links to many other help and policy pages. While valuable for exploratory learning for long-term users, new users who just want to learn enough to complete their short-term task are frustrated by this, not knowing which of the many linked documents will help them complete the task at hand correctly.
-Another limitation of the standard interface is that the main encyclopedia is already well-developed. Notari,\cite{Notari:2006} on motivating students to participate in class wikis, emphasizes the need for a ``launch activity'' which is ``motivating, easy , and quickly achievable.'' Most substantive article-writing activities no longer fall under this description, necessitating the invention of artificial tasks, which lack motivation.
+
+Another limitation of the standard interface is that the main encyclopedia is already well-developed. Notari,\cite{Notari:2006} on motivating students to participate in class wikis, emphasizes the need for a ``launch activity'' which is ``motivating, easy , and quickly achievable.'' Most substantive article-writing activities no longer fall under this description, necessitating the invention of artificial tasks. Although not as motivating as real activities, artificial tasks in a fake environment can be repeated by each user uniformly without consequences, and may be simpler than corresponding tasks on the real project.
 
 \section{Design and learning goals}
 
@@ -101,26 +129,8 @@ New users can be recruited from a variety of existing venues that already deal w
 
 A vital component going forward will be to enable users who are not technically savvy to contribute new lessons to the lesson pool. This will dramatically increase breadth and depth of content, motivate recruiting, and allow content creators to learn by teaching. However, this also risks creating the same excess of options presented by the original website, particularly if multiple lessons cover the same topic. One way to address this is to leverage ratings by players to choose their favorite lessons, and display highly-rated lessons in each category at the top.
 
-\begin{figure}
-\centering
-% \psfig{file=rosette.ps, height=1in, width=1in,}
-\caption{A sample black and white graphic (.ps format) that has
-been resized with the \texttt{psfig} command.}
-\end{figure}
-
-\begin{figure*}
-\centering
-% \epsfig{file=flies.eps}
-\caption{A sample black and white graphic (.eps format)
-that needs to span two columns of text.}
-\end{figure*}
-and don't forget to end the environment with
-{figure*}, not {figure}!
- 
 \section{Conclusions}
-%\end{document}  % This is where a 'short' article might terminate
 
-%ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
 The Wikipedia Adventure is based originally on an idea and
 initial design defined by User:Ocassi. Mock-ups
@@ -129,10 +139,6 @@ other Wikipedia users and the staff of
 CS 294-78 and SCMATHE 220c gave feedback following
 review of the design and ad hoc testing.
 
-%
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
 \bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
 
